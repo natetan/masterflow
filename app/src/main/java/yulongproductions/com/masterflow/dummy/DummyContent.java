@@ -25,9 +25,9 @@ public class DummyContent {
 
     static {
         // Add 3 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
+        addItem(new DummyItem("1", "Peter", "http://marvel.wikia.com/wiki/Peter_Parker_(Earth-616)"));
+        addItem(new DummyItem("2", "Felicia", "http://marvel.wikia.com/wiki/Felicia_Hardy_(Earth-616)"));
+        addItem(new DummyItem("3", "Spider-Man/Black Cat", "http://marvel.wikia.com/wiki/Spider-Man_and_the_Black_Cat_Vol_1"));
     }
 
     private static void addItem(DummyItem item) {
@@ -40,16 +40,18 @@ public class DummyContent {
      */
     public static class DummyItem {
         public String id;
-        public String content;
+        public String name;
+        public String url;
 
-        public DummyItem(String id, String content) {
+        public DummyItem(String id, String name, String url) {
             this.id = id;
-            this.content = content;
+            this.name = name;
+            this.url = url;
         }
 
         @Override
         public String toString() {
-            return content;
+            return name;
         }
     }
 }
